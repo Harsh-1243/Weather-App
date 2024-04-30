@@ -1,21 +1,108 @@
 <!doctype html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+
+    <title>Weather Application</title>
+
+    <!-- goole font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--font awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--bootstrap link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--custom css link-->
+    <link rel="stylesheet" href="index.css">
+
 </head>
 
-<body>
+<body class="d-flex justify-content-center align-items-center">
 
-    
+    <div
+        class="weather-cont bg-white overflow-hidden p-4 rounded-5 d-flex flex-column align-items-center position-relative">
+
+        <div class="search-box w-100 d-flex justify-content-between align-items-center">
+
+            <i class="fa-solid fa-location-dot position-absolute fs-3"></i>
+
+            <input type="text" placeholder="ENTER CITY NAME" class="text-uppercase ps-5 fs-4" autofocus>
+
+            <button type="button" class=" search-btn fa-solid fa-magnifying-glass pe-auto rounded-circle fs-5"></button>
+
+        </div>
+
+
+        <div class="not-found text-center mt-4 opacity-0 d-none">
+
+            <img src="images/404.png" class="w-75">
+            <p class="fs-5 m-0 mt-3">OOPS INVALID LOCATION</p>
+
+        </div>
+
+        <div class="weather-box text-center opacity-0">
+
+            <img src="images/clear.png" alt="IMAGE NOT FOUND" class="w-50 mt-4">
+
+            <p class="temp fs-1 fw-bolder mt-4 mb-0"><span>30°C</span></p>
+
+            <p class="desc fs-3 fw-medium text-uppercase"><span>broken cloud</span></p>
+
+        </div>
+
+        <div class="weather-details opacity-0 d-flex w-100 justify-content-between mt-5 ">
+
+            <div class="humidity d-flex gap-2">
+
+                <i class="fa-solid fa-water fs-2 mt-3"></i>
+
+                <div class="info fs-5 fw-bolder">
+
+                    <span>10%</span>
+
+                    <p>Humidity</p>
+
+                </div>
+
+            </div>
+
+            <div class="wind d-flex gap-2">
+
+                <i class="fa-solid fa-wind fs-2 mt-3"></i>
+
+                <div class="info fs-5 fw-bolder">
+
+                    <span>10Km/h</span>
+                    <p>Wind Speed</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>

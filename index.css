@@ -1,0 +1,94 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+body{
+
+    background: #06283D;
+    height: 100vh;
+}
+
+.weather-cont{
+
+    width:380px;
+    height: 100px;
+    transition: 0.5s ease;
+    
+}
+
+.search-box input{
+
+    color: #06283D;
+    width:80%;
+    
+}
+
+.search-box input::placeholder{
+
+    color: #06283D;
+    font-size: 1rem;
+    
+}
+
+.search-btn{
+
+    max-width: 100px;
+    min-width: 50px;
+    max-height: 100px;
+    min-height: 50px;
+    color: #06283D;
+    background-color: #dff6ff;
+    transition: 0.4s ease;
+
+}
+
+
+.search-btn:hover{
+
+    color: #fff;
+    background:#06283D;
+
+}
+
+.fa-location-dot{
+
+    color: #06283D;
+    
+}
+
+.temp span{
+
+    color: #06283D;
+    
+}
+
+.not-found, .weather-box,.weather-details{
+
+    scale: 0;
+
+}
+
+.fade-animation{
+
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes fade-out {
+
+    to{
+
+        scale: 1;
+        opacity: 1;
+
+    }
+}
