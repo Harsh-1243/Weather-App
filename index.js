@@ -23,7 +23,7 @@ window.addEventListener("keydown", (e) => {
 
 function weatherFun() {
 
-    const CityName = document.querySelector("input").value;
+    let CityName = document.querySelector("input").value;
 
     if (CityName === "") {
 
@@ -43,6 +43,20 @@ function weatherFun() {
                     error404.classList.remove("opacity-0");
                     error404.classList.remove("d-none");
                     error404.classList.add("fade-animation");
+
+                    if (search.classList.contains("fa-magnifying-glass")) {
+
+
+                        search.classList.remove("fa-magnifying-glass");
+                        search.classList.add("fa-x");
+                        
+
+                    }else{
+
+                        document.querySelector("input").value = "";
+                        search.classList.remove("fa-x");
+                        search.classList.add("fa-magnifying-glass");
+                    }
 
                 } else {
 
@@ -70,6 +84,22 @@ function weatherFun() {
                     wind.innerHTML = `${json.wind.speed}Km/h`;
                     container.style.height = "550px";
 
+
+                    if (search.classList.contains("fa-magnifying-glass")) {
+
+
+                        search.classList.remove("fa-magnifying-glass");
+                        search.classList.add("fa-x");
+                        
+
+                    }else{
+
+                        document.querySelector("input").value = "";
+                        search.classList.remove("fa-x");
+                        search.classList.add("fa-magnifying-glass");
+                    }
+
+
                 }
 
             }).catch((json_err) => {
@@ -85,5 +115,6 @@ function weatherFun() {
         })
 
     }
-
 }
+
+
