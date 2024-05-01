@@ -8,7 +8,20 @@ const container = document.querySelector(".weather-cont");
 
 const error404 = document.querySelector(".not-found");
 
-search.addEventListener("click",()=>{
+search.addEventListener("click", weatherFun);
+
+
+window.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+
+        weatherFun();
+
+    }
+
+})
+
+function weatherFun() {
 
     const CityName = document.querySelector("input").value;
 
@@ -16,16 +29,16 @@ search.addEventListener("click",()=>{
 
         alert("ENTER CITY NAME");
         return;
-        
+
     }
-    else{
+    else {
 
-        fetch(BaseUrl + `&q=${CityName}` + ApiKey).then((res)=>{
+        fetch(BaseUrl + `&q=${CityName}` + ApiKey).then((res) => {
 
-            res.json().then((json)=>{
+            res.json().then((json) => {
 
-                if (json.cod  === "404") {
-                    
+                if (json.cod === "404") {
+
                     container.style.height = "370px";
                     error404.classList.remove("opacity-0");
                     error404.classList.remove("d-none");
@@ -46,7 +59,7 @@ search.addEventListener("click",()=>{
                     const weather_details = document.querySelector(".weather-details");
 
                     img.src = `images/${json.weather[0].main}.png`;
-                    
+
                     weather_box.classList.remove("opacity-0");
                     weather_box.classList.add("fade-animation");
                     weather_details.classList.remove("opacity-0");
@@ -56,23 +69,21 @@ search.addEventListener("click",()=>{
                     humidity.innerHTML = `${json.main.humidity}%`;
                     wind.innerHTML = `${json.wind.speed}Km/h`;
                     container.style.height = "550px";
-                    
-                }   
 
-            }).catch((json_err)=>{
+                }
+
+            }).catch((json_err) => {
 
                 console.log(json_err);
 
             })
 
-        }).catch((err)=>{
+        }).catch((err) => {
 
             console.log(err);
 
         })
-        
-    }   
 
-});
+    }
 
-
+}
