@@ -1,1 +1,1 @@
-#PROJECT LIN:- https://harsh-1243.github.io/Weather-App/
+#PROJECT LINK:- https://harsh-1243.github.io/Weather-App/
