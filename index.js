@@ -72,7 +72,7 @@ function weatherFun() {
                     const weather_box = document.querySelector(".weather-box");
                     const weather_details = document.querySelector(".weather-details");
 
-                    img.src = `/images/${json.weather[0].main}.png`;
+                    img.src = `images/${json.weather[0].main}.png`;
 
                     weather_box.classList.remove("opacity-0");
                     weather_box.classList.add("fade-animation");
